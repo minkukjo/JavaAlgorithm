@@ -1,6 +1,5 @@
 package main.Search.IceCreamParlor;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -14,7 +13,6 @@ import java.util.Scanner;
     디스커션에도 이진탐색으로 푸는건 멍청하다고 하여 좀 더 고민해보니
     이진탐색알고리즘이 O(logn)이긴 하지만, 정렬에 최소 nlogn이 필요하기 때문에
     해쉬에 넣어서 찾는 방법이 O(n)만에 가능하다.
-    이진탐색 버전으로도 한번 풀어보자.
  */
 
 
