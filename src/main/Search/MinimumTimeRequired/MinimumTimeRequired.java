@@ -13,29 +13,27 @@ public class MinimumTimeRequired {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n= sc.nextInt();
-        int g = sc.nextInt();
-        int[] a = new int[n];
+        long goal = sc.nextLong();
+        long[] machines = new long[n];
         for(int i=0; i<n; i++){
-            a[i] = sc.nextInt();
+            machines[i] = sc.nextInt();
         }
 
-        long left = 0;
-        long right = Long.MAX_VALUE;
-        long ans = Long.MAX_VALUE;
+        long max = machines[machines.length-1];
+        long left = 0L;
+        long right = max*goal;
+        long ans = -1;
 
-        while(left <= right){
+        while(left < right){
             long mid = (left+right)/2;
-            long item = 0;
+            long item = 0L;
 
-            for(int i=0; i<n; i++){
-                item += mid/a[i];
-                if(item>= g){
-                    break;
-                }
+            for(long machine : machines){
+                item += mid/machine;
             }
 
-            if(item > g){
-                right = mid-1;
+            if(item >= goal){
+                right = mid;
                 ans = mid;
             }
             else{
