@@ -2,6 +2,8 @@ package main.Sorting.Hindex;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /*
     a번 이상 인용된 횟수 b
@@ -12,17 +14,8 @@ import java.util.Arrays;
 public class Hindex {
     public static int solution(int[] citations) {
         int answer = 0;
-        Arrays.sort(citations);
 
-        ArrayList<Integer> arr = new ArrayList<>();
-
-        for(int i=0; i<citations.length; i++){
-            if(citations[i] < citations.length-i){
-                arr.add(citations[i]);
-            }else{
-                arr.add(citations.length-i);
-            }
-        }
+        List<Integer> arr = Arrays.stream(citations).boxed().collect(Collectors.toList());
 
         arr.sort((o1, o2) -> {
             if(o1 < o2){
@@ -33,7 +26,10 @@ public class Hindex {
             return 0;
         });
 
-        answer = arr.get(0);
+        for(int i=0; i<arr.size(); i++){
+            if(arr.get(i) <= answer) break;
+            answer++;
+        }
 
         return answer;
     }
