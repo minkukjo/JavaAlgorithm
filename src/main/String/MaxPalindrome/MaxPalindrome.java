@@ -11,7 +11,6 @@ public class MaxPalindrome {
         for(int i=0; i<s.length(); i++){
             dp[i][i] = true;
         }
-
         for(int i=0; i<s.length()-1; i++){
             if(s.charAt(i) == s.charAt(i+1)){
                 dp[i][i+1]= true;
