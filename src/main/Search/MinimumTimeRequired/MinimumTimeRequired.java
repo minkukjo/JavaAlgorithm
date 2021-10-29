@@ -12,32 +12,31 @@ import java.util.Scanner;
 public class MinimumTimeRequired {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int n= sc.nextInt();
+        int n = sc.nextInt();
         long goal = sc.nextLong();
         long[] machines = new long[n];
-        for(int i=0; i<n; i++){
+        for (int i = 0; i < n; i++) {
             machines[i] = sc.nextInt();
         }
 
-        long max = machines[machines.length-1];
+        long max = machines[machines.length - 1];
         long left = 0L;
-        long right = max*goal;
+        long right = max * goal;
         long ans = -1;
 
-        while(left < right){
-            long mid = (left+right)/2;
+        while (left < right) {
+            long mid = (left + right) / 2;
             long item = 0L;
 
-            for(long machine : machines){
-                item += mid/machine;
+            for (long machine : machines) {
+                item += mid / machine;
             }
 
-            if(item >= goal){
+            if (item >= goal) {
                 right = mid;
                 ans = mid;
-            }
-            else{
-                left = mid+1;
+            } else {
+                left = mid + 1;
             }
         }
 

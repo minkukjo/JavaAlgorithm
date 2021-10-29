@@ -19,13 +19,13 @@ import java.util.Scanner;
 
 
 public class LeftRotation {
-    public void MySolution(){
+    public void MySolution() {
         Scanner sc = new Scanner(System.in);
         ArrayList<Integer> arr = new ArrayList<>();
-        int n,r;
+        int n, r;
         n = sc.nextInt();
         r = sc.nextInt();
-        for(int i=0; i<n; i++){
+        for (int i = 0; i < n; i++) {
             arr.add(sc.nextInt());
         }
 
@@ -33,23 +33,24 @@ public class LeftRotation {
 
         arr.forEach(System.out::println);
     }
+
     public static void main(String[] args) {
         LeftRotation leftRotation = new LeftRotation();
         //leftRotation.MySolution();
 
         Scanner sc = new Scanner(System.in);
         ArrayList<Integer> arr = new ArrayList<>();
-        int n,r;
+        int n, r;
         n = sc.nextInt();
         r = sc.nextInt();
-        for(int i=0; i<n; i++){
+        for (int i = 0; i < n; i++) {
             arr.add(sc.nextInt());
         }
 
         int[] ans = new int[n];
 
-        for(int i=0;i <n; i++){
-            int move = (i+r)%n;
+        for (int i = 0; i < n; i++) {
+            int move = (i + r) % n;
             ans[i] = arr.get(move);
             System.out.println(ans[i] + " ");
         }

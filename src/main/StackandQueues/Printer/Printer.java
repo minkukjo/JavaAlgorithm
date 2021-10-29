@@ -11,10 +11,11 @@ import java.util.Queue;
     앞으로도 자바로 계속 정진해나가자
  */
 
-class Document{
+class Document {
     int index;
     int data;
-    Document(int index, int data){
+
+    Document(int index, int data) {
         this.index = index;
         this.data = data;
     }
@@ -24,30 +25,29 @@ public class Printer {
     public static int solution(int[] priorities, int location) {
         int answer = 0;
         PriorityQueue<Integer> pq = new PriorityQueue<>((o1, o2) -> {
-            if(o1 > o2){
+            if (o1 > o2) {
                 return -1;
-            }
-            else if(o1 <o2){
+            } else if (o1 < o2) {
                 return 1;
             }
             return 0;
         });
         Queue<Document> q = new LinkedList<>();
 
-        for(int i=0; i<priorities.length; i++){
-            q.add(new Document(i,priorities[i]));
+        for (int i = 0; i < priorities.length; i++) {
+            q.add(new Document(i, priorities[i]));
             pq.offer(priorities[i]);
         }
 
 
-        while(!q.isEmpty() && !pq.isEmpty()){
+        while (!q.isEmpty() && !pq.isEmpty()) {
             Document target = q.poll();
-            if(target.data < pq.peek()){
+            if (target.data < pq.peek()) {
                 q.add(target);
-            }else{
+            } else {
                 pq.poll();
                 answer++;
-                if(target.index == location){
+                if (target.index == location) {
                     break;
                 }
             }
@@ -57,8 +57,8 @@ public class Printer {
     }
 
     public static void main(String[] args) {
-        int[] arr = {1,1,9,1,1,1};
+        int[] arr = {1, 1, 9, 1, 1, 1};
         int location = 0;
-        System.out.println(solution(arr,location));
+        System.out.println(solution(arr, location));
     }
 }

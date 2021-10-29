@@ -18,12 +18,12 @@ import java.util.Random;
 
 public class KthSmallestNumber {
 
-    public static int partition(int[] arr,int low,int high){
+    public static int partition(int[] arr, int low, int high) {
         int pivot = arr[high];
         int pivotloc = low;
 
-        for(int i=low; i<=high; i++){
-            if(arr[i] < pivot){
+        for (int i = low; i <= high; i++) {
+            if (arr[i] < pivot) {
                 int temp = arr[i];
                 arr[i] = arr[pivotloc];
                 arr[pivotloc] = temp;
@@ -38,17 +38,18 @@ public class KthSmallestNumber {
         return pivotloc;
     }
 
-    public static int quickSelect(int[] arr, int low,int high, int k){
-        int partition = partition(arr,low,high);
+    public static int quickSelect(int[] arr, int low, int high, int k) {
+        int partition = partition(arr, low, high);
 
-        if(partition == k) return arr[partition];
-        else if(partition < k) return quickSelect(arr,partition+1,high,k);
-        else return quickSelect(arr,low,partition-1,k);
+        if (partition == k) return arr[partition];
+        else if (partition < k) return quickSelect(arr, partition + 1, high, k);
+        else return quickSelect(arr, low, partition - 1, k);
     }
-    public static void main(String[] args) {
-        int[] arr = {4,7,8,9,1,3,2};
 
-        System.out.println(quickSelect(arr,0,arr.length-1,3));
+    public static void main(String[] args) {
+        int[] arr = {4, 7, 8, 9, 1, 3, 2};
+
+        System.out.println(quickSelect(arr, 0, arr.length - 1, 3));
 
 
     }

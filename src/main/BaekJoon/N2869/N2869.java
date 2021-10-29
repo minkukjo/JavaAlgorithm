@@ -15,11 +15,10 @@ public class N2869 {
         Double B = sc.nextDouble();
         Double V = sc.nextDouble();
 
-        if(V.equals(A)){
+        if (V.equals(A)) {
             System.out.println(1);
-        }
-        else{
-            System.out.println( (int)Math.ceil((V-A)/(A-B))+1 );
+        } else {
+            System.out.println((int) Math.ceil((V - A) / (A - B)) + 1);
         }
     }
 }

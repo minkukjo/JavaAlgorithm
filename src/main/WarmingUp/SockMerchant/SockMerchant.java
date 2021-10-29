@@ -19,20 +19,20 @@ public class SockMerchant {
         ArrayList<Integer> arr = new ArrayList<>();
         int n;
         n = scanner.nextInt();
-        HashMap<Integer,Integer> hashMap = new HashMap<>();
-        for(int i=0; i<n; i++){
+        HashMap<Integer, Integer> hashMap = new HashMap<>();
+        for (int i = 0; i < n; i++) {
             int temp = scanner.nextInt();
             arr.add(temp);
             int x = 1;
-            if(hashMap.containsKey(temp)){
-                x = hashMap.get(temp) +1;
+            if (hashMap.containsKey(temp)) {
+                x = hashMap.get(temp) + 1;
             }
-            hashMap.put(temp,x);
+            hashMap.put(temp, x);
         }
         int ans = 0;
-        for( int value : hashMap.values()){
-            if(value >= 2){
-                ans += value/2;
+        for (int value : hashMap.values()) {
+            if (value >= 2) {
+                ans += value / 2;
             }
         }
 

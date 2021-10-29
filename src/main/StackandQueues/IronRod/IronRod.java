@@ -11,13 +11,13 @@ public class IronRod {
     public static int solution(String arrangement) {
         int answer = 0;
         Stack<Character> stack = new Stack<>();
-        for(int i=0; i<arrangement.length(); i++){
-            if( arrangement.charAt(i) == '('){
+        for (int i = 0; i < arrangement.length(); i++) {
+            if (arrangement.charAt(i) == '(') {
                 stack.push(arrangement.charAt(i));
-            }else if( arrangement.charAt(i) == ')'){
+            } else if (arrangement.charAt(i) == ')') {
                 stack.pop();
                 answer++;
-            }else if( arrangement.charAt(i) == '0'){
+            } else if (arrangement.charAt(i) == '0') {
                 answer += stack.size();
             }
         }
@@ -25,8 +25,9 @@ public class IronRod {
 
         return answer;
     }
+
     public static void main(String[] args) {
-        String arg = "()(((()())(())()))(())".replace("()","0");
+        String arg = "()(((()())(())()))(())".replace("()", "0");
         System.out.println(solution(arg));
     }
 }

@@ -21,12 +21,12 @@ public class JumpingontheClouds {
         int position = 0;
         int jump = 0;
         int n = sc.nextInt();
-        for(int i=0; i<n; i++){
+        for (int i = 0; i < n; i++) {
             arr.add(sc.nextInt());
         }
 
-        while (position != n -1) {
-            if (position + 2 <= n-1 && arr.get(position + 2) != 1 ) {
+        while (position != n - 1) {
+            if (position + 2 <= n - 1 && arr.get(position + 2) != 1) {
                 position += 2;
                 jump += 1;
             } else {

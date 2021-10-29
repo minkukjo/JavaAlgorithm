@@ -3,16 +3,16 @@ package main.Hash.PhoneBook;
 public class Trie {
     private TrieNode rootNode;
 
-    Trie(){
+    Trie() {
         rootNode = new TrieNode();
     }
 
-    boolean insert(String word){
+    boolean insert(String word) {
         TrieNode thisNode = this.rootNode;
-        for(int i=0; i<word.length(); i++){
-            thisNode = thisNode.getChildren().computeIfAbsent(word.charAt(i),c-> new TrieNode());
+        for (int i = 0; i < word.length(); i++) {
+            thisNode = thisNode.getChildren().computeIfAbsent(word.charAt(i), c -> new TrieNode());
 
-            if(thisNode.isLeaf()){
+            if (thisNode.isLeaf()) {
                 return true;
             }
         }

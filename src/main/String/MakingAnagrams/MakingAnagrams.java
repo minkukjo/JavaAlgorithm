@@ -21,14 +21,14 @@ public class MakingAnagrams {
         String b = sc.next();
         int ans = 0;
         int[] alphabet = new int[26];
-        for(char c : a.toCharArray()){
-            alphabet[c-'a']++;
+        for (char c : a.toCharArray()) {
+            alphabet[c - 'a']++;
         }
-        for(char c : b.toCharArray()){
-            alphabet[c-'a']--;
+        for (char c : b.toCharArray()) {
+            alphabet[c - 'a']--;
         }
 
-        for(int i : alphabet){
+        for (int i : alphabet) {
             ans += Math.abs(i);
         }
 

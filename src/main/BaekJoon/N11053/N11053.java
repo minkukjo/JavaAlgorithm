@@ -19,15 +19,15 @@ public class N11053 {
         return ret;
     }
 
-    public static int binarySearchLSI(int[] arr,int n) {
-        int[] dp = new int[n+1];
+    public static int binarySearchLSI(int[] arr, int n) {
+        int[] dp = new int[n + 1];
         int ans = 1;
         dp[1] = arr[1];
         int size = 1;
-        for (int i = 2; i < n+1; i++) {
+        for (int i = 2; i < n + 1; i++) {
             if (dp[size] < arr[i]) {
                 dp[++size] = arr[i];
-            }else{
+            } else {
                 int target = lowerBound(dp, size, arr[i]);
                 dp[target] = arr[i];
 
@@ -41,11 +41,11 @@ public class N11053 {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int[] arr = new int[n + 1];
-        for (int i = 1; i < n+1; i++) {
+        for (int i = 1; i < n + 1; i++) {
             arr[i] = sc.nextInt();
         }
 
-        System.out.println(binarySearchLSI(arr,n));
+        System.out.println(binarySearchLSI(arr, n));
 
         /*
         int dp[] = new int[arr.length];

@@ -7,27 +7,27 @@ public class MoreSpicy {
         int answer = 0;
 
         PriorityQueue<Integer> pq = new PriorityQueue<>();
-        for(int a : scoville){
+        for (int a : scoville) {
             pq.add(a);
         }
 
-        while(!pq.isEmpty() && pq.peek() <= K){
+        while (!pq.isEmpty() && pq.peek() <= K) {
             int first = pq.poll();
-            if(pq.isEmpty()) return -1;
+            if (pq.isEmpty()) return -1;
             int second = pq.poll();
 
-            pq.add(first+(second*2));
+            pq.add(first + (second * 2));
             answer++;
         }
 
-        if(pq.isEmpty()) return -1;
+        if (pq.isEmpty()) return -1;
 
         return answer;
     }
 
     public static void main(String[] args) {
-        int[] scoville = {1,2,3,9,10,12};
+        int[] scoville = {1, 2, 3, 9, 10, 12};
         int K = 7;
-        System.out.println(solution(scoville,K));
+        System.out.println(solution(scoville, K));
     }
 }

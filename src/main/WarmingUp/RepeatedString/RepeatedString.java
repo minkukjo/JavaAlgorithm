@@ -25,15 +25,15 @@ public class RepeatedString {
         long aCount = 0L;
         long sizeLeft = 0L;
         int size = str.length();
-        for(int i=0; i<size; i++){
-            if(str.charAt(i) == 'a'){
+        for (int i = 0; i < size; i++) {
+            if (str.charAt(i) == 'a') {
                 aCount++;
             }
         }
-        aCount = aCount * (n/size);
+        aCount = aCount * (n / size);
         sizeLeft = n % size;
-        for(int i=0; i<sizeLeft; i++){
-            if(str.charAt(i) == 'a'){
+        for (int i = 0; i < sizeLeft; i++) {
+            if (str.charAt(i) == 'a') {
                 aCount++;
             }
         }

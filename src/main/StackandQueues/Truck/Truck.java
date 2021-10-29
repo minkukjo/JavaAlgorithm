@@ -11,18 +11,16 @@ public class Truck {
         Queue<Integer> q = new LinkedList<>();
         int now_weight = 0;
         int i = 0;
-        while(i < truck_weights.length){
-            if(q.size() == bridge_length){
+        while (i < truck_weights.length) {
+            if (q.size() == bridge_length) {
                 now_weight -= q.poll();
-            }
-            else{
-                if(weight >= truck_weights[i] + now_weight && q.size() < bridge_length){
+            } else {
+                if (weight >= truck_weights[i] + now_weight && q.size() < bridge_length) {
                     q.add(truck_weights[i]);
                     now_weight += truck_weights[i];
                     i++;
                     answer++;
-                }
-                else{
+                } else {
                     q.add(0);
                     answer++;
                 }
@@ -39,9 +37,9 @@ public class Truck {
 
         int bridge_length = 2;
         int weight = 10;
-        int[] arr = {7,4,5,6};
+        int[] arr = {7, 4, 5, 6};
 
-        System.out.println(solution(bridge_length,weight,arr));
+        System.out.println(solution(bridge_length, weight, arr));
 
     }
 }

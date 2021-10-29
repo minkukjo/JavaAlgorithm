@@ -4,18 +4,18 @@ public class Deque<E> {
     private Node<E> front;
     private Node<E> rear;
 
-    Deque(){
+    Deque() {
         this.front = null;
         this.rear = null;
     }
 
-    private boolean isEmpty(){
-        if(front == null) return true;
+    private boolean isEmpty() {
+        if (front == null) return true;
         else return false;
     }
 
-    public void addFirst(E data){
-        if(isEmpty()){
+    public void addFirst(E data) {
+        if (isEmpty()) {
             this.front = new Node<E>(data);
             this.rear = this.front;
             return;
@@ -24,8 +24,9 @@ public class Deque<E> {
         front.getPrev().setNext(front);
         front = front.getPrev();
     }
-    public void addLast(E data){
-        if(isEmpty()){
+
+    public void addLast(E data) {
+        if (isEmpty()) {
             this.rear = new Node<E>(data);
             this.front = rear;
             return;
@@ -34,12 +35,13 @@ public class Deque<E> {
         rear.getNext().setPrev(rear);
         rear = rear.getNext();
     }
-    public E removeFirst(){
-        if(isEmpty()){
+
+    public E removeFirst() {
+        if (isEmpty()) {
             return null;
         }
         E temp = front.getData();
-        if(front == rear){
+        if (front == rear) {
             front = null;
             rear = null;
             return temp;
@@ -50,12 +52,12 @@ public class Deque<E> {
 
     }
 
-    public E removeLast(){
-        if(isEmpty()){
+    public E removeLast() {
+        if (isEmpty()) {
             return null;
         }
         E temp = rear.getData();
-        if(front == rear){
+        if (front == rear) {
             front = null;
             rear = null;
             return temp;

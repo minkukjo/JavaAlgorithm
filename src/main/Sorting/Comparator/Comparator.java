@@ -9,16 +9,16 @@ public class Comparator<P> {
         int n = sc.nextInt();
         Player[] player = new Player[n];
         Checker checker = new Checker();
-        for(int i=0; i<n; i++){
+        for (int i = 0; i < n; i++) {
             String name = sc.next();
             int score = sc.nextInt();
-            player[i] = new Player(name,score);
+            player[i] = new Player(name, score);
         }
 
-        Arrays.sort(player,checker);
+        Arrays.sort(player, checker);
 
-        for(int i=0; i<n; i++){
-            System.out.println(player[i].getName()+ " " + player[i].getScore());
+        for (int i = 0; i < n; i++) {
+            System.out.println(player[i].getName() + " " + player[i].getScore());
         }
     }
 }

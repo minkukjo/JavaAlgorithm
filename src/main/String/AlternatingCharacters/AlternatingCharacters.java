@@ -27,8 +27,8 @@ public class AlternatingCharacters {
         String s = sc.next();
         int ans = 0;
         char prev = s.charAt(0);
-        for(int i=1; i<s.length(); i++){
-            if(prev == s.charAt(i)){
+        for (int i = 1; i < s.length(); i++) {
+            if (prev == s.charAt(i)) {
                 ans++;
             }
             prev = s.charAt(i);

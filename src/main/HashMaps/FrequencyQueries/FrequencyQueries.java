@@ -29,11 +29,11 @@ public class FrequencyQueries {
         Scanner sc = new Scanner(System.in);
         List<List<Integer>> queries = new ArrayList<List<Integer>>();
         ArrayList<Integer> answer = new ArrayList<>();
-        HashMap<Integer,Integer> hashMap = new HashMap<>();
-        HashMap<Integer,Integer> freqMap = new HashMap<>();
+        HashMap<Integer, Integer> hashMap = new HashMap<>();
+        HashMap<Integer, Integer> freqMap = new HashMap<>();
 
         int n = sc.nextInt();
-        for(int i=0; i<n; i++){
+        for (int i = 0; i < n; i++) {
             int first = sc.nextInt();
             int second = sc.nextInt();
             List<Integer> temp = new ArrayList<>();
@@ -42,14 +42,14 @@ public class FrequencyQueries {
             queries.add(temp);
         }
 
-        for(int i=0; i<n; i++){
+        for (int i = 0; i < n; i++) {
             int operation = queries.get(i).get(0);
             int data = queries.get(i).get(1);
-            if(operation == 1){
+            if (operation == 1) {
 
-            }else if(operation == 2){
+            } else if (operation == 2) {
 
-            }else{
+            } else {
             }
         }
 

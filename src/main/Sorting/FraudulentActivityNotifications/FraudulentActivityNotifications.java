@@ -17,45 +17,46 @@ import java.util.Scanner;
  */
 
 public class FraudulentActivityNotifications {
-    private static int getMedian(int[] count, int d){
+    private static int getMedian(int[] count, int d) {
         int sum = 0;
-        for(int i=0; i<count.length; i++){
+        for (int i = 0; i < count.length; i++) {
             sum += count[i];
-            if( (2*sum) == d){
-                return (2*i+1);
-            }
-            else if((2*sum) > d){
-                return i*2;
+            if ((2 * sum) == d) {
+                return (2 * i + 1);
+            } else if ((2 * sum) > d) {
+                return i * 2;
             }
         }
         return 1;
     }
-    public static int activityNotifications(int[] expenditure,int d){
-        int[] count= new int[201];
+
+    public static int activityNotifications(int[] expenditure, int d) {
+        int[] count = new int[201];
         int ans = 0;
-        for(int i=0; i<d; i++){
+        for (int i = 0; i < d; i++) {
             count[expenditure[i]]++;
         }
-        for(int i=d; i<expenditure.length; i++){
-            int median = getMedian(count,d);
-            if(median <= expenditure[i]){
+        for (int i = d; i < expenditure.length; i++) {
+            int median = getMedian(count, d);
+            if (median <= expenditure[i]) {
                 ans++;
             }
-            count[expenditure[i-d]]--;
+            count[expenditure[i - d]]--;
             count[expenditure[i]]++;
         }
         return ans;
     }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int d = sc.nextInt();
         int[] expenditure = new int[n];
         int ans = 0;
-        for(int i=0; i<n; i++){
+        for (int i = 0; i < n; i++) {
             expenditure[i] = sc.nextInt();
         }
-        ans = activityNotifications(expenditure,d);
+        ans = activityNotifications(expenditure, d);
         System.out.println(ans);
 
 

@@ -31,12 +31,12 @@ public class MaxMin {
         int k = sc.nextInt();
         int[] arr = new int[n];
         int ans = Integer.MAX_VALUE;
-        for(int i=0; i<n; i++){
+        for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
         }
         Arrays.sort(arr);
-        for(int i=0; i<=n-k; i++){
-            ans = Math.min(arr[k+i-1] - arr[i],ans);
+        for (int i = 0; i <= n - k; i++) {
+            ans = Math.min(arr[k + i - 1] - arr[i], ans);
         }
         System.out.println(ans);
 

@@ -13,7 +13,7 @@ public class BiggestNumber {
     public static String solution(int[] numbers) {
         String answer = "";
         ArrayList<String> str = new ArrayList<>();
-        for(int i=0; i<numbers.length; i++){
+        for (int i = 0; i < numbers.length; i++) {
             str.add(Integer.toString(numbers[i]));
         }
 
@@ -33,14 +33,15 @@ public class BiggestNumber {
 
         answer = temp.toString();
         */
-        if(answer.charAt(0) == '0'){
+        if (answer.charAt(0) == '0') {
             return "0";
         }
 
         return answer;
     }
+
     public static void main(String[] args) {
-        int[] arr = {0,0,0,0,1,0};
+        int[] arr = {0, 0, 0, 0, 1, 0};
         System.out.println(solution(arr));
     }
 }

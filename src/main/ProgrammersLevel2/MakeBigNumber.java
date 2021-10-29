@@ -2,7 +2,7 @@ package main.ProgrammersLevel2;
 
 public class MakeBigNumber {
     public static void main(String[] args) {
-        System.out.println(solution("1231234",3));
+        System.out.println(solution("1231234", 3));
     }
 
     private static String solution(String number, int k) {
@@ -13,11 +13,11 @@ public class MakeBigNumber {
         int i = 1;
         while (delete != k) {
 
-            if (i >= 1 && ans.charAt(i-1) < ans.charAt(i)) {
+            if (i >= 1 && ans.charAt(i - 1) < ans.charAt(i)) {
                 ans.deleteCharAt(i - 1);
                 delete++;
                 i--;
-            } else if (i == ans.length()-1 && ans.charAt(i) <= ans.charAt(i-1)) {
+            } else if (i == ans.length() - 1 && ans.charAt(i) <= ans.charAt(i - 1)) {
                 ans.deleteCharAt(i);
                 delete++;
                 i--;

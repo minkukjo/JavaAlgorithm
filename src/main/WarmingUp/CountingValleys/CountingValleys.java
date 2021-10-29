@@ -20,15 +20,14 @@ public class CountingValleys {
         int n = s.nextInt();
         String str = s.next();
 
-        for(int i=0; i<n; i++){
+        for (int i = 0; i < n; i++) {
             char temp = str.charAt(i);
-            if(temp == 'U'){
+            if (temp == 'U') {
                 ++position;
-                if(position == 0){
-                  valley += 1;
+                if (position == 0) {
+                    valley += 1;
                 }
-            }
-            else{
+            } else {
                 --position;
             }
         }

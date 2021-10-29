@@ -1,6 +1,6 @@
 package main.LinkedList.DetectCycle;
 
-class Node{
+class Node {
     int data;
     Node next;
 }
@@ -8,14 +8,14 @@ class Node{
 public class DetectCycle {
 
     boolean hasCycle(Node head) {
-        if(head == null) return false;
+        if (head == null) return false;
         Node first = head;
         Node second = head.next;
 
-        while(first != second){
-            if(second == null || second.next == null) return false;
+        while (first != second) {
+            if (second == null || second.next == null) return false;
             first = first.next;
-            second= second.next.next;
+            second = second.next.next;
 
         }
 

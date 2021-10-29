@@ -8,16 +8,17 @@ public class PhoneBook {
         Trie trie = new Trie();
         Arrays.sort(phone_book);
 
-        for(int i=0; i<phone_book.length; i++){
-            if(trie.insert(phone_book[i])){
+        for (int i = 0; i < phone_book.length; i++) {
+            if (trie.insert(phone_book[i])) {
                 answer = false;
                 break;
             }
         }
         return answer;
     }
+
     public static void main(String[] args) {
-        String[] phone_book = {"12","123","1235"};
+        String[] phone_book = {"12", "123", "1235"};
         System.out.println(solution(phone_book));
     }
 }

@@ -54,7 +54,7 @@ public class N3055 {
 
             int size = W.size();
 
-            for(int j=0; j<size; j++){
+            for (int j = 0; j < size; j++) {
                 Point water = W.poll();
 
                 for (int i = 0; i < 4; i++) {
@@ -91,16 +91,16 @@ public class N3055 {
                 }
             }
 
-            if(size == 0){
+            if (size == 0) {
                 break;
             }
 
-            if(isFound){
+            if (isFound) {
                 break;
             }
         }
 
-        if(!isFound){
+        if (!isFound) {
             System.out.println("KAKTUS");
         }
 

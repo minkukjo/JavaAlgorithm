@@ -14,32 +14,32 @@ public class LargestRectangle {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int[] h = new int[n];
-        for(int i=0; i<n; i++){
+        for (int i = 0; i < n; i++) {
             h[i] = sc.nextInt();
         }
 
         Stack<Integer> stack = new Stack<>();
-        int i=0;
+        int i = 0;
         int max = 0;
-        while(i<h.length){
-            if(stack.isEmpty() || h[i] >= h[stack.peek()]){
+        while (i < h.length) {
+            if (stack.isEmpty() || h[i] >= h[stack.peek()]) {
                 stack.push(i);
                 i++;
-            }else{
-                int p =stack.pop();
+            } else {
+                int p = stack.pop();
                 int height = h[p];
-                int width = stack.isEmpty() ? i : i-stack.peek()-1;
+                int width = stack.isEmpty() ? i : i - stack.peek() - 1;
 
-                max = Math.max(height*width,max);
+                max = Math.max(height * width, max);
             }
         }
 
-        while(!stack.empty()){
-            int p =stack.pop();
+        while (!stack.empty()) {
+            int p = stack.pop();
             int height = h[p];
-            int width = stack.isEmpty() ? i : i-stack.peek()-1;
+            int width = stack.isEmpty() ? i : i - stack.peek() - 1;
 
-            max = Math.max(height*width,max);
+            max = Math.max(height * width, max);
 
         }
     }

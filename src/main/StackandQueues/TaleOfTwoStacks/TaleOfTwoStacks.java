@@ -9,26 +9,27 @@ import java.util.Stack;
     구체적으로 어떻게 구현하는지 물어봤을 때 이렇게 짜낼 수 있다.
  */
 
-class MyQueue<T>{
+class MyQueue<T> {
     Stack<T> fifo = new Stack<>();
     Stack<T> lifo = new Stack<>();
 
-    void enqueue(T value){
-        if(fifo.isEmpty()){
+    void enqueue(T value) {
+        if (fifo.isEmpty()) {
             fifo.push(value);
             return;
         }
         lifo.push(value);
 
     }
-    T peek(){
+
+    T peek() {
         return fifo.peek();
     }
 
-    void dequeue(){
+    void dequeue() {
         fifo.pop();
-        if(fifo.isEmpty()){
-            while(!lifo.isEmpty()){
+        if (fifo.isEmpty()) {
+            while (!lifo.isEmpty()) {
                 fifo.push(lifo.pop());
             }
         }

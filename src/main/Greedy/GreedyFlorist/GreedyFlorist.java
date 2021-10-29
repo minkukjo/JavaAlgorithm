@@ -22,21 +22,20 @@ public class GreedyFlorist {
         int mul = 0;
         int ans = 0;
         int[] c = new int[n];
-        for(int i=0; i<n; i++){
+        for (int i = 0; i < n; i++) {
             c[i] = sc.nextInt();
         }
 
         Arrays.sort(c);
 
-        for(int i=n-1; i>=0; i--){
-            ans += (mul+1)*c[i];
+        for (int i = n - 1; i >= 0; i--) {
+            ans += (mul + 1) * c[i];
             count++;
-            if( count%k == 0){
+            if (count % k == 0) {
                 mul++;
             }
         }
         System.out.println(ans);
-
 
 
     }

@@ -18,23 +18,24 @@ public class Hindex {
         List<Integer> arr = Arrays.stream(citations).boxed().collect(Collectors.toList());
 
         arr.sort((o1, o2) -> {
-            if(o1 < o2){
+            if (o1 < o2) {
                 return 1;
-            }else if(o1 >o2){
+            } else if (o1 > o2) {
                 return -1;
             }
             return 0;
         });
 
-        for(int i=0; i<arr.size(); i++){
-            if(arr.get(i) <= answer) break;
+        for (int i = 0; i < arr.size(); i++) {
+            if (arr.get(i) <= answer) break;
             answer++;
         }
 
         return answer;
     }
+
     public static void main(String[] args) {
-        int[] arr = {3,0,6,1,5};
+        int[] arr = {3, 0, 6, 1, 5};
         System.out.println(solution(arr));
     }
 }

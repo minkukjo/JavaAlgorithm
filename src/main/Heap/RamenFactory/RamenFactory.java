@@ -29,9 +29,9 @@ class Supply implements Comparable<Supply> {
 
     @Override
     public int compareTo(Supply o) {
-        if(this.supply < o.supply){
+        if (this.supply < o.supply) {
             return 1;
-        }else if(this.supply > o.supply){
+        } else if (this.supply > o.supply) {
             return -1;
         }
         return 0;
@@ -47,9 +47,9 @@ public class RamenFactory {
         int day = stock;
         int days = 0;
 
-        while(day < k){
-            while(days < dates.length && dates[days] <= day){
-                pq.add(new Supply(dates[days],supplies[days]));
+        while (day < k) {
+            while (days < dates.length && dates[days] <= day) {
+                pq.add(new Supply(dates[days], supplies[days]));
                 days++;
             }
             answer++;
@@ -64,14 +64,14 @@ public class RamenFactory {
         int stock = 4;
         int stock3 = 10;
         int[] dates = {4, 10, 15};
-        int[] dates2 = {1, 2, 3,4};
-        int[] dates3 = {5,10};
+        int[] dates2 = {1, 2, 3, 4};
+        int[] dates3 = {5, 10};
         int[] supplies = {20, 5, 10};
-        int[] supplies2 = {10,40,30,20};
-        int[] supplies3 = {1,100};
+        int[] supplies2 = {10, 40, 30, 20};
+        int[] supplies3 = {1, 100};
         int k = 30;
         int k2 = 100;
         int k3 = 110;
-        System.out.println(solution(stock,dates,supplies,k));
+        System.out.println(solution(stock, dates, supplies, k));
     }
 }

@@ -25,22 +25,22 @@ public class NewYearChaos {
         Scanner sc = new Scanner(System.in);
         int test_case = sc.nextInt();
 
-        for(int i=0; i<test_case; i++){
+        for (int i = 0; i < test_case; i++) {
             int n = sc.nextInt();
             int[] q = new int[n];
             int ans = 0;
-            for(int j=0; j<n; j++){
+            for (int j = 0; j < n; j++) {
                 q[j] = sc.nextInt();
             }
 
-            for( int j=0; j<n; j++){
-                if(q[j] - (j+1) > 2){
+            for (int j = 0; j < n; j++) {
+                if (q[j] - (j + 1) > 2) {
                     System.out.println("Chaos");
                     break;
                 }
 
-                for(int k= Math.max(0,q[j] -2); k<j; k++){
-                    if(q[k] > q[j]){
+                for (int k = Math.max(0, q[j] - 2); k < j; k++) {
+                    if (q[k] > q[j]) {
                         ans++;
                     }
                 }

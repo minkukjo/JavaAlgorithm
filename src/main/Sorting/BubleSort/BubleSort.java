@@ -10,13 +10,13 @@ public class BubleSort {
 
     public static void main(String[] args) {
 
-        Scanner sc= new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 
         int n = sc.nextInt();
         int[] a = new int[n];
         int swap_count = 0;
 
-        for(int i=0;i<n; i++){
+        for (int i = 0; i < n; i++) {
             a[i] = sc.nextInt();
         }
 
@@ -25,13 +25,13 @@ public class BubleSort {
                 // Swap adjacent elements if they are in decreasing order
                 if (a[j] > a[j + 1]) {
                     int temp = a[j];
-                    a[j] = a[j+1];
-                    a[j+1] = temp;
+                    a[j] = a[j + 1];
+                    a[j + 1] = temp;
                     swap_count++;
                 }
             }
         }
-        for(int i=0;i<n; i++){
+        for (int i = 0; i < n; i++) {
             System.out.print(a[i] + " ");
         }
 

@@ -18,26 +18,25 @@ import java.util.Scanner;
 
 public class MinimumSwaps2 {
     public static void main(String[] args) {
-        Scanner sc= new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int min = 1;
         int ans = 0;
         int[] arr = new int[n];
-        for(int i=0; i<n; i++){
+        for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
         }
 
-        for(int i=0; i<n; i++){
-            for(int j=i+1; j<n; j++){
-                if(arr[j] == min){
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                if (arr[j] == min) {
                     int temp = arr[j];
                     arr[j] = arr[i];
                     arr[i] = temp;
                     min++;
                     ans++;
                     break;
-                }
-                else if(arr[i] == min){
+                } else if (arr[i] == min) {
                     min++;
                     break;
                 }

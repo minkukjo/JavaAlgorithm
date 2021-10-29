@@ -22,11 +22,11 @@ import java.util.Scanner;
  */
 
 public class CountTriplets {
-    static void timeOver(int n, int r, int[] arr, int ans){
-        for(int i=0; i<n; i++){
-            for(int j=i+1; j<n; j++){
-                for(int k=j+1; k<n; k++){
-                    if(arr[j]/r == arr[i] && arr[i]*r == arr[j] && arr[k] == arr[j]*r){
+    static void timeOver(int n, int r, int[] arr, int ans) {
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                for (int k = j + 1; k < n; k++) {
+                    if (arr[j] / r == arr[i] && arr[i] * r == arr[j] && arr[k] == arr[j] * r) {
                         ans++;
                     }
                 }
@@ -35,33 +35,31 @@ public class CountTriplets {
 
         System.out.println(ans);
     }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int n,r;
+        int n, r;
         long ans = 0;
         long result = 0;
         n = sc.nextInt();
         r = sc.nextInt();
         ArrayList<Long> arr = new ArrayList<>();
-        HashMap<Long,Long> hashMap2 = new HashMap<>();
-        HashMap<Long,Long> hashMap3 = new HashMap<>();
-        for(int i=0; i<n; i++){
+        HashMap<Long, Long> hashMap2 = new HashMap<>();
+        HashMap<Long, Long> hashMap3 = new HashMap<>();
+        for (int i = 0; i < n; i++) {
             arr.add(sc.nextLong());
         }
 
-        for(int i=0; i<n; i++){
-            result += hashMap3.getOrDefault(arr.get(i),0L);
+        for (int i = 0; i < n; i++) {
+            result += hashMap3.getOrDefault(arr.get(i), 0L);
 
-            if(hashMap2.containsKey(arr.get(i))){
-                hashMap3.put(arr.get(i)*r,hashMap3.getOrDefault(arr.get(i)*r, 0L)+hashMap2.get(arr.get(i)));
+            if (hashMap2.containsKey(arr.get(i))) {
+                hashMap3.put(arr.get(i) * r, hashMap3.getOrDefault(arr.get(i) * r, 0L) + hashMap2.get(arr.get(i)));
             }
-            hashMap2.put(arr.get(i)*r,hashMap2.getOrDefault(arr.get(i)*r, 0L)+1);
+            hashMap2.put(arr.get(i) * r, hashMap2.getOrDefault(arr.get(i) * r, 0L) + 1);
         }
 
         System.out.println(ans);
-
-
-
 
 
     }

@@ -20,28 +20,28 @@ public class RansomNote {
         int magazineSize = sc.nextInt();
         int noteSize = sc.nextInt();
         boolean no = false;
-        HashMap<String,Integer> hashMap = new HashMap<>();
-        for(int i=0; i<magazineSize; i++){
+        HashMap<String, Integer> hashMap = new HashMap<>();
+        for (int i = 0; i < magazineSize; i++) {
             String temp = sc.next();
             int x = 1;
-            if(hashMap.containsKey(temp)){
-                x = hashMap.get(temp) +1;
+            if (hashMap.containsKey(temp)) {
+                x = hashMap.get(temp) + 1;
             }
-            hashMap.put(temp,x);
+            hashMap.put(temp, x);
         }
 
-        for(int i=0; i<noteSize; i++){
+        for (int i = 0; i < noteSize; i++) {
             String input = sc.next();
-            if(hashMap.containsKey(input) && hashMap.get(input) > 0){
-                hashMap.put(input,hashMap.get(input)-1);
-            }else{
+            if (hashMap.containsKey(input) && hashMap.get(input) > 0) {
+                hashMap.put(input, hashMap.get(input) - 1);
+            } else {
                 no = true;
                 break;
             }
         }
-        if(no){
+        if (no) {
             System.out.println("No");
-        }else{
+        } else {
             System.out.println("Yes");
         }
 

@@ -4,11 +4,11 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
-class Subin{
+class Subin {
     int point;
     int time;
 
-    public Subin(int point, int time){
+    public Subin(int point, int time) {
         this.point = point;
         this.time = time;
     }
@@ -24,26 +24,26 @@ public class N1697 {
 
         Queue<Subin> q = new LinkedList<>();
         boolean[] visit = new boolean[100001];
-        q.offer(new Subin(start,0));
+        q.offer(new Subin(start, 0));
 
-        while(!q.isEmpty()){
+        while (!q.isEmpty()) {
             Subin temp = q.poll();
             visit[temp.point] = true;
 
-            if(temp.point == goal){
+            if (temp.point == goal) {
                 ans = temp.time;
                 break;
             }
 
 
-            if(temp.point-1 >= 0 && !visit[temp.point-1]){
-                q.offer(new Subin(temp.point-1,temp.time+1));
+            if (temp.point - 1 >= 0 && !visit[temp.point - 1]) {
+                q.offer(new Subin(temp.point - 1, temp.time + 1));
             }
-            if(temp.point+1 <= 100000 && !visit[temp.point+1] ){
-                q.offer(new Subin(temp.point+1,temp.time+1));
+            if (temp.point + 1 <= 100000 && !visit[temp.point + 1]) {
+                q.offer(new Subin(temp.point + 1, temp.time + 1));
             }
-            if(temp.point*2 <= 100000 && !visit[temp.point*2]){
-                q.offer(new Subin(temp.point*2,temp.time+1));
+            if (temp.point * 2 <= 100000 && !visit[temp.point * 2]) {
+                q.offer(new Subin(temp.point * 2, temp.time + 1));
             }
         }
 

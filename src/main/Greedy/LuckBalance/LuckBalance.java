@@ -15,26 +15,26 @@ public class LuckBalance {
         List<Integer> zeroList = new ArrayList<>();
         List<Integer> oneList = new ArrayList<>();
 
-        for(int i=0; i<n; i++){
+        for (int i = 0; i < n; i++) {
             int l = sc.nextInt();
             int t = sc.nextInt();
-            if(t == 1){
+            if (t == 1) {
                 oneList.add(l);
-            }else{
+            } else {
                 zeroList.add(l);
             }
         }
 
         oneList.sort(Comparator.reverseOrder());
 
-        for(int i=k; i<oneList.size(); i++){
-            oneList.set(i, oneList.get(i)*-1);
+        for (int i = k; i < oneList.size(); i++) {
+            oneList.set(i, oneList.get(i) * -1);
         }
-        for(int e : oneList){
+        for (int e : oneList) {
             result += e;
         }
 
-        for(int e : zeroList){
+        for (int e : zeroList) {
             result += e;
         }
 

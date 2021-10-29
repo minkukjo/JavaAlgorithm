@@ -18,14 +18,14 @@ public class Pairs {
         int k = sc.nextInt();
         int[] arr = new int[n];
         int ans = 0;
-        HashMap<Integer,Integer> hashMap = new HashMap<>();
-        for(int i=0; i<n; i++){
+        HashMap<Integer, Integer> hashMap = new HashMap<>();
+        for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
-            hashMap.put(arr[i],i);
+            hashMap.put(arr[i], i);
         }
 
-        for(int i=0; i<n; i++){
-            if(hashMap.containsKey(arr[i]-k)){
+        for (int i = 0; i < n; i++) {
+            if (hashMap.containsKey(arr[i] - k)) {
                 ans++;
             }
         }

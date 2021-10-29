@@ -17,27 +17,27 @@ public class SpecialStringAgainRetry {
         String s = sc.next();
         int n = s.length();
         int counter = s.length();
-        int consec=  1;
+        int consec = 1;
         int midIndex = -1;
 
-        for(int i=1; i<n; i++){
-            if(s.charAt(i) == s.charAt(i-1)){
+        for (int i = 1; i < n; i++) {
+            if (s.charAt(i) == s.charAt(i - 1)) {
                 counter += consec;
                 consec++;
-                if(midIndex> 0){
+                if (midIndex > 0) {
                     // midIndex값이 0보다 크다는 것은 aba, cbc같은 것이 이미 검증되었기 때문에 midIndex-consec을 한 값과 i가 같은지만 보면 추가 가능
-                    if((midIndex-consec) >0 && s.charAt(midIndex-consec) == s.charAt(i)){
+                    if ((midIndex - consec) > 0 && s.charAt(midIndex - consec) == s.charAt(i)) {
                         counter++;
-                    }else{
+                    } else {
                         midIndex = -1;
                     }
                 }
-            }else{
+            } else {
                 consec = 1;
-                if( (i-2) >= 0 && s.charAt(i-2) == s.charAt(i)){
+                if ((i - 2) >= 0 && s.charAt(i - 2) == s.charAt(i)) {
                     counter++;
-                    midIndex = i-1;
-                }else{
+                    midIndex = i - 1;
+                } else {
                     midIndex = 1;
                 }
             }

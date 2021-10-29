@@ -2,11 +2,13 @@ package main.Hash.PhoneBook;
 
 import java.util.HashMap;
 
-class TrieNode{
-    HashMap<Character,TrieNode> children = new HashMap<>();
+class TrieNode {
+    HashMap<Character, TrieNode> children = new HashMap<>();
     boolean isLeaf = false;
 
-    TrieNode(){}
+    TrieNode() {
+    }
+
     public HashMap<Character, TrieNode> getChildren() {
         return children;
     }

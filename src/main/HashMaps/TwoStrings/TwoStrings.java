@@ -2,6 +2,7 @@ package main.HashMaps.TwoStrings;
 
 import java.util.HashMap;
 import java.util.Scanner;
+
 /*
     2
     hello
@@ -21,17 +22,17 @@ public class TwoStrings {
         String s2 = sc.next();
         boolean yes = false;
         HashMap<Character, Character> hashMap = new HashMap<>();
-        for(int i=0; i<s1.length(); i++){
-            hashMap.put(s1.charAt(i),s1.charAt(i));
+        for (int i = 0; i < s1.length(); i++) {
+            hashMap.put(s1.charAt(i), s1.charAt(i));
         }
-        for(int i=0; i<s2.length(); i++){
-            if(hashMap.containsKey(s2.charAt(i))){
+        for (int i = 0; i < s2.length(); i++) {
+            if (hashMap.containsKey(s2.charAt(i))) {
                 yes = true;
             }
         }
-        if(yes){
+        if (yes) {
             System.out.println("YES");
-        }else{
+        } else {
             System.out.println("NO");
         }
 

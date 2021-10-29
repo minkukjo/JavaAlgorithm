@@ -1,6 +1,7 @@
 package main.Sorting.MarkandToys;
 
 import javax.swing.*;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -16,21 +17,21 @@ import java.util.Scanner;
 public class MarkandToys {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int n= sc.nextInt();
+        int n = sc.nextInt();
         int k = sc.nextInt();
         int ans = 0;
         int[] prices = new int[n];
-        for(int i=0; i<n; i++){
+        for (int i = 0; i < n; i++) {
             prices[i] = sc.nextInt();
         }
 
         Arrays.sort(prices);
 
-        for(int i=0; i<n; i++){
-            if(prices[i] <= k){
+        for (int i = 0; i < n; i++) {
+            if (prices[i] <= k) {
                 k -= prices[i];
                 ans++;
-            }else{
+            } else {
                 break;
             }
         }

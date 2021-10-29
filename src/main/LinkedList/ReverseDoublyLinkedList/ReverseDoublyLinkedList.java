@@ -12,6 +12,7 @@ class DoublyLinkedListNode {
     DoublyLinkedListNode prev;
 
 }
+
 public class ReverseDoublyLinkedList {
     static DoublyLinkedListNode reverse(DoublyLinkedListNode head) {
         DoublyLinkedListNode temp = head.next;

@@ -22,20 +22,20 @@ public class IceCreamParlor {
         Scanner sc = new Scanner(System.in);
         int money = sc.nextInt();
         int n = sc.nextInt();
-        Map<Integer,Integer> map = new HashMap<>();
+        Map<Integer, Integer> map = new HashMap<>();
 
         int[] cost = new int[n];
-        for(int i=0; i<n; i++){
+        for (int i = 0; i < n; i++) {
             cost[i] = sc.nextInt();
         }
 
 
-        for(int i=0; i<n; i++){
-            if(map.containsKey(cost[i])){
-                System.out.println(map.get(cost[i]) + " " + i+1);
+        for (int i = 0; i < n; i++) {
+            if (map.containsKey(cost[i])) {
+                System.out.println(map.get(cost[i]) + " " + i + 1);
                 break;
-            }else{
-                map.put(money-cost[i],i+1);
+            } else {
+                map.put(money - cost[i], i + 1);
             }
         }
     }
