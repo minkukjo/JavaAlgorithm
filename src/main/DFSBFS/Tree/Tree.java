@@ -1,4 +1,4 @@
-package main.DFSBFS.Network;
+package main.DFSBFS.Tree;
 
 import java.util.ArrayList;
 import java.util.List;
